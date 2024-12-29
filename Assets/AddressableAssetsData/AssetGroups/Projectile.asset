@@ -10,40 +10,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Unit
+  m_Name: Projectile
   m_EditorClassIdentifier: 
-  m_GroupName: Unit
+  m_GroupName: Projectile
   m_Data:
     m_SerializedData: []
-  m_GUID: 0bdc55328e15e6446be0991598d91b18
+  m_GUID: 613238535a9ee874bb57524f83f242fd
   m_SerializeEntries:
-  - m_GUID: c4ce4273bfab4d94a9806e1e6b04c875
-    m_Address: Unit_1
+  - m_GUID: ebcdbec1cba573245b79e403c5357cb9
+    m_Address: Ef_Archer
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
-  - m_GUID: d1aa18d34cde09c4fb541da3f4af216f
-    m_Address: Unit_2
+  - m_GUID: 09931f371e100dd47905310e93a5a288
+    m_Address: Ef_Assassin
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
-  - m_GUID: 43eaedeb87e68a548a1915a278f48667
-    m_Address: Unit_3
+  - m_GUID: 86b72f8876b9fdc4fb394e63006dbf51
+    m_Address: Ef_Spear
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
-  - m_GUID: 67374c9f5c9718640aa833c97782e341
-    m_Address: Unit_4
+  - m_GUID: d10a14b553bbd7a4388b44c5e68f518d
+    m_Address: Ef_Swordman
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
-  - m_GUID: cc8d6e7d8e5db504da19799e027aa606
-    m_Address: Unit_5
+  - m_GUID: 3c402ab967c1cba4692afc173a158a95
+    m_Address: Ef_Wizard
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
-  - m_GUID: 734714e1ee6279549a89d8ac0b2c76b7
-    m_Address: Unit_Base
+  - m_GUID: 235a8eecbf349104484a5a18106c1d04
+    m_Address: ProjectileBase
     m_ReadOnly: 0
     m_SerializedLabels:
     - Preload
@@ -51,5 +51,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 7f070549afe04bf47960f4296bbd0cda, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 45f254235d5a84247a319d13bcd49c0d, type: 2}
-    - {fileID: 11400000, guid: 68b947ccca91dd64ab9e02d9eac29f93, type: 2}
+    - {fileID: 11400000, guid: 0a841edbfadadf143abb3fefffcb34de, type: 2}
+    - {fileID: 11400000, guid: aca9007f18a0e164b995fb938b80f8ee, type: 2}

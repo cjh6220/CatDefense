@@ -5,9 +5,9 @@ using UnityEngine;
 public class HPBarManager : Singleton<HPBarManager>
 {
     [SerializeField] HPBar hPBar;
-    public void AddNewBar(Transform target)
+    public async void AddNewBar(Transform target)
     {
-        var bar = Instantiate(hPBar, this.transform);
+        var bar = await ResourcePoolManager.GetAsync<HPBar>("HPBar", true, this.transform);
         bar.SetTarget(target);
     }
 }
