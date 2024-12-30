@@ -9,18 +9,19 @@ public class MonsterBase : MonoBehaviour
     [SerializeField] SpriteRenderer sr;
     [SerializeField] Sprite img;
     [SerializeField] int currentPoint;
+    float _speed = 1f; 
     NavMeshAgent agent;
     bool isInit = false;
     bool firstFrame = true;
     private void Start() 
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        // agent = GetComponent<NavMeshAgent>();
+        // agent.updateRotation = false;
+        // agent.updateUpAxis = false;
 
         InitMonster();
-        target = PointManager.Instance.GetFirstPoint();
-        currentPoint = 0;
+        //target = PointManager.Instance.GetFirstPoint();
+        //currentPoint = 0;
         isInit = true;
     }
 
@@ -33,19 +34,21 @@ public class MonsterBase : MonoBehaviour
     private void Update() 
     {
         if (!isInit) return;
-        agent.SetDestination(target.position);
-        if (firstFrame)
-        {
-            firstFrame = false;
-        }
-        else
-        {
-            if (agent.remainingDistance <= 0.1f)
-            {
-                SetNextPoint();
-                agent.SetDestination(target.position);
-            }
-        }
+
+        transform.position += -transform.up * _speed *Time.deltaTime;
+        // agent.SetDestination(target.position);
+        // if (firstFrame)
+        // {
+        //     firstFrame = false;
+        // }
+        // else
+        // {
+        //     if (agent.remainingDistance <= 0.1f)
+        //     {
+        //         SetNextPoint();
+        //         agent.SetDestination(target.position);
+        //     }
+        // }
     }
 
     void SetNextPoint()

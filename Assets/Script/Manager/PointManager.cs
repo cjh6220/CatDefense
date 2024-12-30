@@ -22,4 +22,9 @@ public class PointManager : Singleton<PointManager>
             return Points[currentPoint + 1];
         }
     }
+
+    public Vector2 GetRandomPoint()
+    {
+        return Points[Random.Range(0,Points.Length)].position;
+    }
 }

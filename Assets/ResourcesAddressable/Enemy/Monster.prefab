@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7142607784858561755}
   - component: {fileID: 7142607784858561754}
-  - component: {fileID: 7142607784858561756}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -50,29 +49,6 @@ MonoBehaviour:
   sr: {fileID: 6127526372410981313}
   img: {fileID: 21300000, guid: fe2b0c905a02183459f70fa652f181d0, type: 3}
   currentPoint: 0
-  hPBar: {fileID: 3269244269104884891, guid: eb2c4d3e36816e14fb8b7acf855b3133, type: 3}
---- !u!195 &7142607784858561756
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7142607784858561753}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.1
-  m_Speed: 2
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2.09
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &9127973568127181439
 GameObject:
   m_ObjectHideFlags: 0

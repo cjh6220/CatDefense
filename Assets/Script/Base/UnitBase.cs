@@ -6,7 +6,7 @@ using UnityEngine;
 public class UnitBase : MonoBehaviour
 {
     float atkRange = 3f;
-    float atkCoolTime = 2f;
+    float atkCoolTime = 0.2f;
     float _currentTime = 0f;
     bool isInit = false;
     bool attackReady = false;
@@ -25,48 +25,27 @@ public class UnitBase : MonoBehaviour
 
     async UniTask Attack()
     {
-        var target = BattleManager.Instance.GetCloseEnemy(this.transform.position);
-        if (target != null)
-        {
-            var dist = Vector2.Distance(this.transform.position, target.transform.position);
-            if (dist > atkRange)
-            {
-                
-            }
-            else
-            {
-                attackReady = false;
-             
-                var projectile = await ResourcePoolManager.GetAsync<ProjectileBase>("ProjectileBase", true, this.transform);
-                projectile.transform.localPosition = Vector3.zero;
-                projectile.transform.localRotation = Quaternion.identity;
-                projectile.transform.localScale = Vector3.one;
-                projectile.SetProjectile(target);
-                Debug.LogError("Shot = " + _order);
-
-            }
-        }
+        var projectile = await ResourcePoolManager.GetAsync<ProjectileBase>("ProjectileBase", true, null);
+        projectile.transform.position = this.transform.position;
+        projectile.transform.localRotation = Quaternion.identity;
+        projectile.transform.localScale = Vector3.one;
+        projectile.SetProjectile();
     }
 
-    private async void Update() 
+    private async void Update()
     {
         if (!isInit) return;
-        if (attackReady)
-        {
-            await Attack();
-            return;
-        }
 
         _currentTime += Time.deltaTime;
         if (_currentTime >= atkCoolTime)
         {
             _currentTime -= atkCoolTime;
-            attackReady = true;
+            //attackReady = true;
             await Attack();
         }
     }
 
-    private void OnDrawGizmos() 
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, atkRange);
